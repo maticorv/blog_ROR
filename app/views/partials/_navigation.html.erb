@@ -1,0 +1,33 @@
+  		<head>
+  			<nav class="be-red white large-padding">
+  				<ul class="no-list row center-xs middle-xs">
+            <li class="col-md">
+              <h1 class="no-margin" id="logo">Blog Wisp </h1>
+            </li>
+	  				<li class="col-md">
+	  					<%=link_to "Inicio", root_path %>
+	  				</li>
+	  				<li class="col-md">
+	  					Diseño
+	  				</li>
+	  				<li class="col-md">
+	  					Programacion
+	  				</li>
+            <% if user_signed_in? %>
+              <li class="col-md">
+                <%= link_to "Cerrar Cesion", destroy_user_session_path, method: :delete %>
+              </li>
+            <%else%>
+             <li class="col-md">
+                <%= link_to "Iniciar Cesion", new_user_session_path %>
+              </li> 
+               <li class="col-md">
+                <%= link_to "Crear Cuenta", new_user_registration_path %>
+              </li> 
+            <%end%>
+  				</ul>
+  			</nav>
+  		</head>
+  </body>
+
+  <body>
